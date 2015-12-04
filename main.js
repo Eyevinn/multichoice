@@ -20,16 +20,20 @@ app.get('/channels', function (req, res)
 
     res.send(
         [
-            { num:1, name:"hobby"    },
-            { num:2, name:"work"     },
-            { num:3, name:"leisure"  },
-            { num:4, name:"contract" },
+            { checked: 1, 
+              url: "http://host1.com/path?arg=something", name:"Hobby channel" },
+            { checked: 0, 
+              url:"http://host2.com/path?arg=something", name:"Work channel" },
+            { checked: 0, 
+              url: "http://host3.com/path?arg=something", name:"Leisure channel" },
+            { checked: 0, 
+              url:"http://host4.com/path?arg=something", name:"Money channel" },
         ] );
 
 
 });
 
-app.post('/channels', function(req,res)
+app.put('/channels', function(req,res)
 {
     console.log( req.body );
 

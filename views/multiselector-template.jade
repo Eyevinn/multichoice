@@ -1,0 +1,13 @@
+script(id="multiselector-template" type="text/template")
+  div
+    dl.dropdown
+      dt
+        label Select Channels
+      ul
+        <% _.each(channels, function(channel) { %>
+        li 
+          label 
+            <%= "<input type='checkbox' value='" + channel.url + "'" + (channel.checked?'checked':'') + ">" %>
+            b <%= channel.name %>
+        <% }); %>
+    button.submit-button Submit
