@@ -9,6 +9,12 @@ var app = express();
 
 app.use(express.static('public'));
 
+app.set('view engine', 'jade');
+
+app.get('/', function(req, res) {
+  res.render('index');
+});
+
 app.get('/channels', function (req, res)
 {
 
@@ -30,6 +36,7 @@ app.post('/channels', function(req,res)
     res.status(200);
     res.end();
 });
+
 
 // app.listen(8080);
 var server = app.listen(8080, function ()
