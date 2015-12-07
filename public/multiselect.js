@@ -9,7 +9,8 @@ var ChannelsView = Backbone.View.extend({
     tpl: _.template($('#multiselector-template').html()),
 
     events: {
-        "click .submit-button": "submit"
+        "click .submit-button": "submit",
+        "click #title": "toggleShow"
     },
 
     initialize: function() {
@@ -22,6 +23,10 @@ var ChannelsView = Backbone.View.extend({
         var data = {channels : this.collection.toJSON()};
         this.$el.html(this.tpl(data));
         return this;
+    },
+
+    toggleShow: function() {
+        $("ul").slideToggle("fast");
     },
 
     submit: function() {

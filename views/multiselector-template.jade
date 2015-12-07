@@ -2,8 +2,8 @@ script(id="multiselector-template" type="text/template")
   div
     dl.dropdown
       dt
-        label Select Channels
-      ul
+        label#title Select Channels
+      ul#selection-list
         <% _.each(channels, function(channel) { %>
         li 
           label 
