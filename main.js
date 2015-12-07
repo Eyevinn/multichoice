@@ -37,7 +37,7 @@ app.get('/channels', function (req, res)
 
 app.put('/channels', function(req,res)
 {
-    console.log( req.body );
+    console.log( req );
 
     res.status(200);
     res.end();

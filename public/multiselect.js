@@ -29,7 +29,12 @@ var ChannelsView = Backbone.View.extend({
         console.log(checked);
         // TODO: sync checked status
         // sync doesn't send anything new now
-        Backbone.sync('update',this.collection);
+
+		var Collection = Backbone.Collection.extend( {url:'/channels'} );
+		var collection = new Collection();
+		for (val of checked)
+			collection.add( { url : val } );
+        Backbone.sync('update',collection);
     },
 });
 
