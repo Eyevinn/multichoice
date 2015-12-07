@@ -4,10 +4,12 @@ var fs          = require( 'fs'          );
 var express     = require( 'express'     );
 var url         = require( 'url'         );
 var qstring     = require( 'querystring' );
+var bodyParser  = require('body-parser');
 
 var app = express();
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
 
 app.set('view engine', 'jade');
 
